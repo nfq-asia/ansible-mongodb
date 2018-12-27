@@ -1,19 +1,19 @@
-Ansible-mongodb
+# Ansible-mongodb
 =========
 
-Requirement
+## Requirement
 -----------
 
 Edit mongodb_version in var/main.yml to install a specific version
 
-Role Variables
+## Role Variables
 --------------
 
 - mongodb_source_key
 - mongodb_source_url
 - mongodb_verion
 
-mongdb.yaml
+## mongdb.yaml
 -----------
 
 ---
@@ -23,7 +23,7 @@ mongdb.yaml
   rolse:
   - ansible-mongodb
 
-How to use
+## How to use
 ----------------
 
 ansible-playbook -i hosts mongodb.yaml
