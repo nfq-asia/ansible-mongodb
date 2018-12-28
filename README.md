@@ -15,7 +15,7 @@ Edit mongodb_version in var/main.yml to install a specific version
 - hosts: all
   gather_facts: false
   become: true
-  rolse:
+  roles:
   - ansible-mongodb
 
 ## How to use
