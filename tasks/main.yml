@@ -20,4 +20,10 @@
   apt:
     name: mongodb-org
     state: present
+
+- name: re-apply the mongodb configuration
+  copy:
+    backup: true
+    src: templates/mongod.conf
+    dest: "/etc/mongod.conf"
   notify: enable and start mongod service
