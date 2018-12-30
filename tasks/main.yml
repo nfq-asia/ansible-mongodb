@@ -20,10 +20,4 @@
   apt:
     name: mongodb-org
     state: present
-
-- name: enable mongodb services
-  systemd:
-    name: mongod
-    state: started
-    enabled: true
-  become: true
+  notify: enable and start mongod service
