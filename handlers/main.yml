@@ -1,0 +1,6 @@
+---
+- name: enable and start mongod service
+  service:
+    name: mongod
+    enabled: true
+    daemon_reload: true
