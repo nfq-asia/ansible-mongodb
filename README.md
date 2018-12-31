@@ -2,7 +2,7 @@
 
 ## Requirement
 
-Edit mongodb_version in var/main.yml to install a specific version
+Edit mongodb_version in defaults/main.yml or in the mongdb.yml playbook to install a specific version
 
 ## Role Variables
 
@@ -17,6 +17,8 @@ Edit mongodb_version in var/main.yml to install a specific version
   become: true
   roles:
   - ansible-mongodb
+  vars:
+    mongodb_version: "4.0"
 
 ## How to use
 
