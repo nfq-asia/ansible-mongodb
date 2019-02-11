@@ -22,8 +22,7 @@
     state: present
 
 - name: re-apply the mongodb configuration
-  copy:
-    backup: true
-    src: templates/mongod.conf
+  template:
+    src: templates/mongod.conf.j2
     dest: "/etc/mongod.conf"
   notify: enable and start mongod service
