@@ -1,2 +1,10 @@
 ---
 mongodb_version: "4.0"
+admin_password: changeit123
+admin_roles: dbAdminAnyDatabase
+users:
+  devops:
+    database: admin
+    password: changeit123
+    roles: dbAdmin
+    state: present
