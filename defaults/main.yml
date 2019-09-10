@@ -10,3 +10,4 @@ users:
     state: present
 mongodb_conf_template: mongod.conf.j2
 mongodb_logrotate_conf_template: mongodb_logrotate.conf.j2
+mongodb_logfile: /var/log/mongodb/mongod.log
