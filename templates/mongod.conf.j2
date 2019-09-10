@@ -16,7 +16,7 @@ storage:
 systemLog:
   destination: file
   logAppend: true
-  path: /var/log/mongodb/mongod.log
+  path: {{ mongodb_logfile }}
 
 # network interfaces
 net:
@@ -28,7 +28,8 @@ net:
 processManagement:
   timeZoneInfo: /usr/share/zoneinfo
 
-#security:
+security:
+  authorization: "enable"
 
 #operationProfiling:
 

@@ -31,12 +31,22 @@
 
 - name: re-apply the mongodb configuration
   template:
-    src: templates/mongod.conf.j2
+    src: {{ mongodb_conf_template }}
     dest: "/etc/mongod.conf"
   notify: restart
 
 - name: Configure MongoDB
   action: service name=mongod state=started enabled=yes
+
+- name: Make logrotate directory
+  file:
+    path: /etc/logrotate.d
+    state: directory
+
+- name: Configure logrotate
+  template:
+    src: {{ mongodb_logrotate_conf_template }}
+    dest: "/etc/logrotate.d/mongod_logrotate.conf"
 
 - pip: 
     name: pymongo
