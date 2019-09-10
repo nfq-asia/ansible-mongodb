@@ -58,7 +58,6 @@
     roles: "{{ admin_roles }}"
     state: present
     update_password: on_create
-  with_dict: "{{ users }}"
   register: add_admin
 
 - mongodb_user:
