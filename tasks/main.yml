@@ -31,7 +31,7 @@
 
 - name: re-apply the mongodb configuration
   template:
-    src: {{ mongodb_conf_template }}
+    src: "{{ mongodb_conf_template }}"
     dest: "/etc/mongod.conf"
   notify: restart
 
@@ -45,7 +45,7 @@
 
 - name: Configure logrotate
   template:
-    src: {{ mongodb_logrotate_conf_template }}
+    src: "{{ mongodb_logrotate_conf_template }}"
     dest: "/etc/logrotate.d/mongod_logrotate.conf"
 
 - pip: 
