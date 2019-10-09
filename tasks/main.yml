@@ -33,10 +33,13 @@
   template:
     src: "{{ mongodb_conf_template }}"
     dest: "/etc/mongod.conf"
-  notify: restart
+  notify: restart mongod
 
-- name: Configure MongoDB
-  action: service name=mongod state=started enabled=yes
+- name: restart mongod
+  systemd: 
+    name: mongod
+    state: restarted
+    enabled: true
 
 - name: Make logrotate directory
   file:

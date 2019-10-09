@@ -1,3 +1,12 @@
 ---
-- name: restart
-  service: name=mongod state=restarted
+- name: start mongod
+  systemd: 
+    name: mongod
+    state: started
+    enabled: true
+
+- name: restart mongod
+  systemd: 
+    name: mongod
+    state: restarted
+    enabled: true
