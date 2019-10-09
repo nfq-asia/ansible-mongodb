@@ -1,9 +1,13 @@
 ---
-- name: ensure gpg available
+- name: ensure gpg & apt-utils available
   apt:
-    name: gnupg
+    name: "{{ packages }}"
     state: present
     update_cache: true
+  vars:
+    packages:
+    - gnupg
+    - apt-utils
 
 - name: add Mongodb source key
   apt_key:
