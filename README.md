@@ -11,7 +11,7 @@ Edit mongodb_version in defaults/main.yml or in the mongdb.yml playbook to insta
 - mongodb_verion
 
 ## mongdb.yaml
-
+```
 - hosts: all
   gather_facts: false
   become: true
@@ -19,7 +19,7 @@ Edit mongodb_version in defaults/main.yml or in the mongdb.yml playbook to insta
   - ansible-mongodb
   vars:
     mongodb_version: "4.0"
-
+```
 ## How to use
 
 ```
